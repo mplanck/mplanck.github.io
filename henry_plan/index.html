@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html>
+	<head>
+		<title>
+			HenryPlan
+		</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style type="text/css">
+/* general stuff */
+body 
+{
+    text-align: left;
+    font-family: "helvetica", sans-serif;
+    font-size: 11pt;
+}
+
+a:link
+{
+    color: #0057cb;
+    text-decoration: none;
+}
+
+a:visited
+{
+    color: #00449e;
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: #0057cb;
+    text-decoration: underline;
+}
+
+h1 
+{
+    text-align: center;
+    font-size: 20pt;
+}
+
+/* index sections */
+h2.section-head-open
+{
+    font-size: 14pt;
+    margin-bottom: 0pt;
+    padding: 4pt;
+    background-color: #e6edff;
+    border-bottom: none;
+    border-top: 1pt solid #888888;
+    border-left: 1pt solid #888888;
+    border-right: 1pt solid #888888;
+}
+
+.section-body
+{
+    margin-top: 0pt;
+    border-bottom: 1pt solid #888888;
+    border-left: 1pt solid #888888;
+    border-right: 1pt solid #888888;
+    overflow: auto;
+}
+
+.section-content
+{
+    padding: 8pt;
+}
+
+table.chunks
+{
+    border-collapse: collapse;
+}
+
+.chunks td
+{
+    text-align: center;
+    padding-left: 8pt;
+    padding-right: 8pt;
+    padding-top: 0pt;
+    padding-bottom: 0pt;
+    width: 10%;
+}
+
+.data-label
+{
+    font-weight: bold;
+    color: #333333;
+}
+
+.data-content-huge
+{
+    font-size: 
+    font-weight: bold;
+    color: #666666;
+}
+
+.data-content-big
+{
+    font-size: 24pt;
+    font-weight: bold;
+    color: #666666;
+    vertical-align: top;
+}
+
+.data-content-small
+{
+    font-size: 11pt;
+    font-weight: bold;
+    color: #666666;
+}
+
+/* for escaping from floats */
+div.clearer
+{
+    clear: both;
+}
+
+/* normal data table */
+table.basic
+{
+    border-collapse: collapse;
+    font-size: 9pt;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.basic td
+{
+    border: 1pt solid #bfbfbf;
+    padding-top: 4pt;
+    padding-bottom: 4pt;
+    padding-left: 8pt;
+    padding-right: 8pt;
+}
+
+td.wrap
+{
+    word-wrap: break-word;
+}
+
+td.header 
+{
+    background-color: #bfbfbf;
+    font-weight: bold;
+}
+
+td.level1 
+{
+    padding-left: 10pt;
+}
+
+td.level2 
+{
+    padding-left: 20pt;
+}
+
+td.date 
+{
+    text-align: right;
+}
+
+td.duration 
+{
+    text-align: right;
+}
+
+tr.resource td
+{
+    font-weight: bold;
+}
+
+tr.taskTypeGroup td
+{
+    font-weight: bold;
+}
+
+p.unregistered 
+{
+    text-align: left;
+    font-size: 12pt;
+    color: #333333;
+    border-top: 1pt solid #999999;
+}
+
+p.footer 
+{
+    text-align: center;
+    font-size: 8pt;
+    color: #333333;
+}
+
+ul.report-links
+{
+    margin: 0pt;
+    padding: 4pt;
+    
+    list-style-type: none;
+    line-height: 12pt;
+}
+
+.report-links li
+{
+    display: inline;
+    padding-left: 24pt;
+}
+
+img.small-icon
+{
+    width: 16px;
+    height: 16px;
+    margin-left: 0pt;
+    margin-top: 0pt;
+    margin-bottom: 0pt;
+    margin-right: 2pt;
+    vertical-align: middle;
+    border: none;
+}
+
+img.icon
+{
+    width: 32px;
+    height: 32px;
+    margin-left: 0pt;
+    margin-top: 0pt;
+    margin-bottom: 2pt;
+    margin-right: 0pt;
+    vertical-align: middle;
+    border: none;
+}
+</style>
+	</head>
+	<body>
+		<h1>
+			Project Report: HenryPlan
+		</h1>
+		<h2 class="section-head-open">
+			Project Status
+		</h2>
+		<div class="section-body">
+            <div class="section-content" id="status-content">
+                <table class="chunks">
+                    <tr>
+                        <td class="data-label">Start Date:</td>
+                        <td class="data-label">End Date:</td>
+                        <td class="data-label">Variance:</td>
+                        <td class="data-label">Cost:</td>
+                        <td class="data-label">Completion:</td>
+                    </tr>
+                    <tr>
+                        <td class="data-content-big">4/9/15</td>
+                        <td class="data-content-big">6/29/15</td>
+                        <td class="data-content-big"></td>
+                        <td class="data-content-big"></td>
+                        <td class="data-content-big">0%</td>
+                    </tr>
+                </table>
+            </div>
+		</div>
+		<h2 class="section-head-open">
+			Detailed Reports
+		</h2>
+		<div class="section-body">
+            <div class="section-content" id="info-content">
+                <table class="chunks">
+                    <tr>
+                        <td><a href="HenryPlan.html"><img class="icon" src="include/tasks.png" alt="Task" /><br />Task Report</a></td>
+                        <td><a href="HenryPlanResources.html"><img class="icon" src="include/resource.png" alt="Resource" /><br />Resource Report</a></td>
+                        <td><a href="HenryPlanGantt.html"><img class="icon" src="include/gantt.png" alt="Gantt" /><br />Gantt Chart</a></td>
+			<td><a href="HenryPlanTimeline.html"><img class="icon" src="include/timeline.png" alt="Timeline" /><br />Resource Timeline</a></td>
+                        <td><a href="calendars/0%20HenryPlan.ics"><img class="icon" src="include/milestone.png" alt="iCalendar" /><br />Project Milestones</a></td>
+                    </tr>
+                </table>
+            </div>
+		</div>
+		<h2 class="section-head-open">
+			Resource Calendars
+		</h2>
+        <div class="section-body">
+            <div class="section-content" id="resource-content">
+                <table class="basic" id="resource">
+                    <tr>
+                        <td class='header'>
+                            Resource
+                        </td>
+                        <td class='header'>
+                            Calendar
+                        </td>
+                        <td class='header'>
+                            To-Do List
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Animation
+                        </td>
+                        <td class=\"wrap\">
+                            No events for Animation
+                        </td>
+                        <td class=\"wrap\">
+                            No to-dos for Animation
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Animator 1 - Sophie?
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/10%20Animator%201%20-%20Sophie?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Animator 1 - Sophie?</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/10%20Animator%201%20-%20Sophie?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Animator 1 - Sophie?</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Animator 2 - Alyce?
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/11%20Animator%202%20-%20Alyce?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Animator 2 - Alyce?</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/11%20Animator%202%20-%20Alyce?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Animator 2 - Alyce?</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Animator 3 - Bruna?
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/12%20Animator%203%20-%20Bruna?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Animator 3 - Bruna?</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/12%20Animator%203%20-%20Bruna?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Animator 3 - Bruna?</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Animator 4 - Kyle?
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/13%20Animator%204%20-%20Kyle?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Animator 4 - Kyle?</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/13%20Animator%204%20-%20Kyle?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Animator 4 - Kyle?</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Animator 5 - Ramiro?
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/26%20Animator%205%20-%20Ramiro?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Animator 5 - Ramiro?</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/26%20Animator%205%20-%20Ramiro?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Animator 5 - Ramiro?</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Animator 6 - Bernhard?
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/27%20Animator%206%20-%20Bernhard?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Animator 6 - Bernhard?</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/27%20Animator%206%20-%20Bernhard?.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Animator 6 - Bernhard?</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Matt
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/4%20Matt.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Matt</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/4%20Matt.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Matt</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Chris
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/19%20Chris.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Chris</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/19%20Chris.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Chris</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Robert
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/20%20Robert.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Robert</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/20%20Robert.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Robert</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Inigo
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/21%20Inigo.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Inigo</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/21%20Inigo.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Inigo</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Jeff
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/22%20Jeff.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Jeff</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/22%20Jeff.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Jeff</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Bernhard
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/23%20Bernhard.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Bernhard</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/23%20Bernhard.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Bernhard</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Max
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/24%20Max.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Max</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/24%20Max.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Max</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Moe
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/28%20Moe.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Moe</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/28%20Moe.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Moe</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Goro
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/29%20Goro.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Goro</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/29%20Goro.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Goro</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            John
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/31%20John.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for John</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/31%20John.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for John</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Frank
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/33%20Frank.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Frank</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/33%20Frank.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Frank</a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class=\"wrap\">
+                            Music Room
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="calendars/34%20Music%20Room.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>Calendar for Music Room</a>
+                        </td>
+                        <td class=\"wrap\">
+                            <a href="todos/34%20Music%20Room.ics"><img class="small-icon" src="include/ics.png" alt="iCalendar"/>To-do list for Music Room</a>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+        <p class="footer">Exported 4/11/15</p>
+        <p class="footer">OmniPlan&nbsp;2.3.7&nbsp;by <a href="http://www.omnigroup.com">The Omni Group</a></p>
+	</body>
+</html>
