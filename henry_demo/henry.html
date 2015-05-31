@@ -1,0 +1,41 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title>Henry Demo</title>
+
+        <meta name="Keywords" content="webgl, glsl">
+        <meta name="Description" content="Henry Demo">
+        <meta name="Author" content="Occulus Story Studio">
+
+        <link rel="stylesheet" type="text/css" href="./henry_files/demo.css">
+
+        <script src="./henry_files/piLibs.js"></script>
+        <script src="./henry_files/demo.js"></script>
+
+        <script type="text/javascript">
+            var gDemo = null;
+            function pageInit()
+            {
+                piDisableTouch();
+
+                gDemo = new Demo("demoCanvas");
+                if (!gDemo.mCreated)
+                {
+                    alert( "Could not create Henry Fur!" );                    
+                    // here fallback to regular static image
+
+                      document.getElementById("demoCanvas").style.visibility = "hidden";
+                      document.getElementById("demoStaticImage").style.visibility = "";
+                    return;
+                }
+            }
+        </script>
+    </head>
+
+
+    <body onload="pageInit()">
+        <canvas id="demoCanvas" width="1933" height="1111"></canvas>
+        <img src="./henry_files/henry_static.jpg" id="demoStaticImage" width="1933" height="1111" style="visibility:hidden"></img>
+    
+        <div id="title">Henry - Max Version</div>
+        <div id="fpsCounter">60.0 frames per second</div>
+
+</body></html>
