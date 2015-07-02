@@ -1,1 +1,131 @@
-!function(){"use strict";var r="undefined"!=typeof window?window:global;if("function"!=typeof r.require){var e={},n={},t=function(r,e){return{}.hasOwnProperty.call(r,e)},i=function(r,e){var n,t,i=[];n=/^\.\.?(\/|$)/.test(e)?[r,e].join("/").split("/"):e.split("/");for(var o=0,u=n.length;u>o;o++)t=n[o],".."===t?i.pop():"."!==t&&""!==t&&i.push(t);return i.join("/")},o=function(r){return r.split("/").slice(0,-1).join("/")},u=function(e){return function(n){var t=o(e),u=i(t,n);return r.require(u,e)}},s=function(r,e){var t={id:r,exports:{}};return n[r]=t,e(t.exports,u(r),t),t.exports},f=function(r,o){var u=i(r,".");if(null==o&&(o="/"),t(n,u))return n[u].exports;if(t(e,u))return s(u,e[u]);var f=i(u,"./index");if(t(n,f))return n[f].exports;if(t(e,f))return s(f,e[f]);throw new Error('Cannot find module "'+r+'" from "'+o+'"')},c=function(r,n){if("object"==typeof r)for(var i in r)t(r,i)&&(e[i]=r[i]);else e[r]=n},a=function(){var r=[];for(var n in e)t(e,n)&&r.push(n);return r};r.require=f,r.require.define=c,r.require.register=c,r.require.list=a,r.require.brunch=!0}}(),require.register("scripts/story",function(r,e,n){var t,i,o,u;o=function(){var r,e;return r=$(".video-wrapper iframe").height(),e=$(window).height(),$(".content-23 .holder").css("height",e),e>r+40?$(".header-23-sub").css("height",e):void 0},u=function(){return $(window).resize(o)},i=function(){return $(".poster").featherlight()},t=function(){return $("#mc-embedded-subscribe-form").ajaxChimp({url:"//oculusstorystudio.us10.list-manage.com/subscribe/post?u=5fb095ae9b96c44a474479e6a&amp;id=f4cc2f9513"})},window.init=function(){return o(),u(),i(),t()},document.addEventListener("DOMContentLoaded",init)});
+(function(/*! Brunch !*/) {
+  'use strict';
+
+  var globals = typeof window !== 'undefined' ? window : global;
+  if (typeof globals.require === 'function') return;
+
+  var modules = {};
+  var cache = {};
+
+  var has = function(object, name) {
+    return ({}).hasOwnProperty.call(object, name);
+  };
+
+  var expand = function(root, name) {
+    var results = [], parts, part;
+    if (/^\.\.?(\/|$)/.test(name)) {
+      parts = [root, name].join('/').split('/');
+    } else {
+      parts = name.split('/');
+    }
+    for (var i = 0, length = parts.length; i < length; i++) {
+      part = parts[i];
+      if (part === '..') {
+        results.pop();
+      } else if (part !== '.' && part !== '') {
+        results.push(part);
+      }
+    }
+    return results.join('/');
+  };
+
+  var dirname = function(path) {
+    return path.split('/').slice(0, -1).join('/');
+  };
+
+  var localRequire = function(path) {
+    return function(name) {
+      var dir = dirname(path);
+      var absolute = expand(dir, name);
+      return globals.require(absolute, path);
+    };
+  };
+
+  var initModule = function(name, definition) {
+    var module = {id: name, exports: {}};
+    cache[name] = module;
+    definition(module.exports, localRequire(name), module);
+    return module.exports;
+  };
+
+  var require = function(name, loaderPath) {
+    var path = expand(name, '.');
+    if (loaderPath == null) loaderPath = '/';
+
+    if (has(cache, path)) return cache[path].exports;
+    if (has(modules, path)) return initModule(path, modules[path]);
+
+    var dirIndex = expand(path, './index');
+    if (has(cache, dirIndex)) return cache[dirIndex].exports;
+    if (has(modules, dirIndex)) return initModule(dirIndex, modules[dirIndex]);
+
+    throw new Error('Cannot find module "' + name + '" from '+ '"' + loaderPath + '"');
+  };
+
+  var define = function(bundle, fn) {
+    if (typeof bundle === 'object') {
+      for (var key in bundle) {
+        if (has(bundle, key)) {
+          modules[key] = bundle[key];
+        }
+      }
+    } else {
+      modules[bundle] = fn;
+    }
+  };
+
+  var list = function() {
+    var result = [];
+    for (var item in modules) {
+      if (has(modules, item)) {
+        result.push(item);
+      }
+    }
+    return result;
+  };
+
+  globals.require = require;
+  globals.require.define = define;
+  globals.require.register = define;
+  globals.require.list = list;
+  globals.require.brunch = true;
+})();
+require.register("scripts/story", function(exports, require, module) {
+var chimp, posters, windowSize, windowSizeListen;
+
+windowSize = function() {
+  var vh, window_height;
+  vh = $('.video-wrapper iframe').height();
+  window_height = $(window).height();
+  $('.content-23 .holder').css('height', window_height);
+  if ((vh + 40) < window_height) {
+    return $('.header-23-sub').css('height', window_height);
+  }
+};
+
+windowSizeListen = function() {
+  return $(window).resize(windowSize);
+};
+
+posters = function() {
+  return $('.poster').featherlight();
+};
+
+chimp = function() {
+  return $('#mc-embedded-subscribe-form').ajaxChimp({
+    url: '//oculusstorystudio.us10.list-manage.com/subscribe/post?u=5fb095ae9b96c44a474479e6a&amp;id=f4cc2f9513'
+  });
+};
+
+window.init = function() {
+  windowSize();
+  windowSizeListen();
+  posters();
+  return chimp();
+};
+
+document.addEventListener('DOMContentLoaded', init);
+});
+
+;
+//# sourceMappingURL=app.js.map
